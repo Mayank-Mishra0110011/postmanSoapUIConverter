@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "5460b357-924b-46dc-b889-4dcfecca3268",
+		"name": "Test-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16135525"
+	},
+	"item": [
+		{
+			"name": "inbound-APIs",
+			"item": [
+				{
+					"name": "proxy-URLs",
+					"item": [
+						{
+							"name": "withHeadersSetInPreRequestScript",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<root>\n    <id>266989</id>\n    <desc>This is a postman collection converter test</desc>\n</root>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://some-complex-sample-host.com/resource-path/in/stuff/v1",
+									"protocol": "https",
+									"host": [
+										"some-complex-sample-host",
+										"com"
+									],
+									"path": [
+										"resource-path",
+										"in",
+										"stuff",
+										"v1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const headers = [{",
+									"    key: \"custPreScriptHdr1\",",
+									"    value: \"custPreScriptVa11\"",
+									"},{",
+									"    key: \"custPreScriptHdr2\",",
+									"    value: \"custPreScriptVa12\"",
+									"},{",
+									"    key: \"custPreScriptHdr3\",",
+									"    value: \"custPreScriptVa13\"",
+									"}];",
+									"",
+									"headers.forEach(header => pm.request.headers.add(header));"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "main-URLs",
+					"item": [
+						{
+							"name": "withHeadersSetInPreRequestScriptAndHeaders",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "custHeaderInReq1",
+										"value": "custValInReq1",
+										"type": "text"
+									},
+									{
+										"key": "custHeaderInReq2",
+										"value": "custValInReq2",
+										"type": "text"
+									},
+									{
+										"key": "custPreScriptHdrAndMainHdr1",
+										"value": "duplicatetest",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<root>\n    <id>15568</id>\n    <desc>This is a postman collection converter test</desc>\n</root>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://some-complex-sample-host.com/resource-path/in/stuff",
+									"protocol": "https",
+									"host": [
+										"some-complex-sample-host",
+										"com"
+									],
+									"path": [
+										"resource-path",
+										"in",
+										"stuff"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "withHeadersSetInPreRequestScriptAndHeadersAnotherRequest",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "custHeaderInReq1",
+										"value": "custValInReq1",
+										"type": "text"
+									},
+									{
+										"key": "custHeaderInReq2",
+										"value": "custValInReq2",
+										"type": "text"
+									},
+									{
+										"key": "custPreScriptHdrAndMainHdr1",
+										"value": "duplicatetest",
+										"type": "text"
+									},
+									{
+										"key": "onemorecustHdrHere",
+										"value": "onemorecustHdrValueHere",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<root>\n    <id>15568</id>\n    <desc>This is a postman collection converter test</desc>\n</root>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://some-complex-sample-host.com/resource-path/in/stuff/v2",
+									"protocol": "https",
+									"host": [
+										"some-complex-sample-host",
+										"com"
+									],
+									"path": [
+										"resource-path",
+										"in",
+										"stuff",
+										"v2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const headers = [{",
+									"    key: \"custPreScriptHdrAndMainHdr1\",",
+									"    value: \"custPreScriptAndMainHdr1Va11\"",
+									"},{",
+									"    key: \"custPreScriptHdrAndMainHdr2\",",
+									"    value: \"custPreScriptAndMainHdr1Va12\"",
+									"},{",
+									"    key: \"custPreScriptHdrAndMainHdr3\",",
+									"    value: \"custPreScriptAndMainHdr1Va13\"",
+									"}];",
+									"",
+									"headers.forEach(header => pm.request.headers.add(header));"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "someOtherMiscRequest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "miscHdr1",
+								"value": "miscHdrVal1",
+								"type": "text"
+							},
+							{
+								"key": "miscHdr2",
+								"value": "miscHdrVal2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1234,\n    \"desc\": \"This is a postman collection converter test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://some-complex-sample-host.com/resource-path/in/misc/stuff",
+							"protocol": "https",
+							"host": [
+								"some-complex-sample-host",
+								"com"
+							],
+							"path": [
+								"resource-path",
+								"in",
+								"misc",
+								"stuff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "outbound-APIs",
+			"item": [
+				{
+					"name": "withOnlyHeaders",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "custHeader1",
+								"value": "custValue1",
+								"type": "text"
+							},
+							{
+								"key": "custHeader2",
+								"value": "custValue2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1234,\n    \"desc\": \"This is a postman collection converter test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://some-complex-sample-host.com/resource-path/out/stuff",
+							"protocol": "https",
+							"host": [
+								"some-complex-sample-host",
+								"com"
+							],
+							"path": [
+								"resource-path",
+								"out",
+								"stuff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

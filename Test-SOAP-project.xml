@@ -1,0 +1,180 @@
+<con:soapui-project id="a18c6e06-6db0-4ecc-bb67-6f89f900c3f0" activeEnvironment="Default" name="Test-Collection" resourceRoot="" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/><con:interface xsi:type="con:RestService" id="7e5bb2b1-5bf2-48b0-97ab-0e1000997c0a" wadlVersion="http://wadl.dev.java.net/2009/02" name="withHeadersSetInPreRequestScript" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings/>
+  <con:definitionCache/>
+  <con:endpoints>
+      <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+  </con:endpoints>
+  <con:resource name="withHeadersSetInPreRequestScript" path="/resource-path/in/stuff/v1" id="bdecd69c-4802-4797-9ce3-d91269d5d8d1">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="v1 1" id="2c219325-d081-403b-9f12-d6d2f300257c" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="db38b40d-f2f7-4d57-900e-228a0db54a84" mediaType="application/xml" postQueryString="false">
+              <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+&lt;con:entry key="custPreScriptHdr1" value="custPreScriptVa11"/>
+&lt;con:entry key="custPreScriptHdr2" value="custPreScriptVa12"/>
+&lt;con:entry key="custPreScriptHdr3" value="custPreScriptVa13"/>&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+          <con:request><![CDATA[<root>
+    <id>266989</id>
+    <desc>This is a postman collection converter test</desc>
+</root>]]></con:request>
+          <con:credentials>
+              <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+      </con:request>
+  </con:method>
+</con:resource>
+</con:interface><con:interface xsi:type="con:RestService" id="e3ea1cc3-1f5b-455a-9897-af508ce5a462" wadlVersion="http://wadl.dev.java.net/2009/02" name="withHeadersSetInPreRequestScriptAndHeaders" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings/>
+  <con:definitionCache/>
+  <con:endpoints>
+      <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+  </con:endpoints>
+  <con:resource name="withHeadersSetInPreRequestScriptAndHeaders" path="/resource-path/in/stuff" id="627068d5-0271-4bea-be23-74da02ca1cd7">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="stuff 1" id="e69eb1fd-73a8-4dec-a966-8505325f93fa" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="c9b84c22-a4d8-4ec7-87c1-777bf947be36" mediaType="application/xml" postQueryString="false">
+              <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+&lt;con:entry key="custPreScriptHdrAndMainHdr1" value="custPreScriptAndMainHdr1Va11"/>
+&lt;con:entry key="custPreScriptHdrAndMainHdr2" value="custPreScriptAndMainHdr1Va12"/>
+&lt;con:entry key="custPreScriptHdrAndMainHdr3" value="custPreScriptAndMainHdr1Va13"/>
+&lt;con:entry key="custHeaderInReq1" value="custValInReq1"/>
+&lt;con:entry key="custHeaderInReq2" value="custValInReq2"/>&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+          <con:request><![CDATA[<root>
+    <id>15568</id>
+    <desc>This is a postman collection converter test</desc>
+</root>]]></con:request>
+          <con:credentials>
+              <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+      </con:request>
+  </con:method>
+</con:resource>
+</con:interface><con:interface xsi:type="con:RestService" id="b8ac5a51-9902-4307-ae17-0357e98de431" wadlVersion="http://wadl.dev.java.net/2009/02" name="withHeadersSetInPreRequestScriptAndHeadersAnotherRequest" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings/>
+  <con:definitionCache/>
+  <con:endpoints>
+      <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+  </con:endpoints>
+  <con:resource name="withHeadersSetInPreRequestScriptAndHeadersAnotherRequest" path="/resource-path/in/stuff/v2" id="f00075df-b20a-4073-bd01-e08c28db5c0e">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="v2 1" id="63df9210-df97-4f6e-9251-afe2ae48a968" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="410a3e5e-c1a2-4746-8b8e-beac84b36746" mediaType="application/xml" postQueryString="false">
+              <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+&lt;con:entry key="custPreScriptHdrAndMainHdr1" value="custPreScriptAndMainHdr1Va11"/>
+&lt;con:entry key="custPreScriptHdrAndMainHdr2" value="custPreScriptAndMainHdr1Va12"/>
+&lt;con:entry key="custPreScriptHdrAndMainHdr3" value="custPreScriptAndMainHdr1Va13"/>
+&lt;con:entry key="custHeaderInReq1" value="custValInReq1"/>
+&lt;con:entry key="custHeaderInReq2" value="custValInReq2"/>
+&lt;con:entry key="onemorecustHdrHere" value="onemorecustHdrValueHere"/>&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+          <con:request><![CDATA[<root>
+    <id>15568</id>
+    <desc>This is a postman collection converter test</desc>
+</root>]]></con:request>
+          <con:credentials>
+              <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+      </con:request>
+  </con:method>
+</con:resource>
+</con:interface><con:interface xsi:type="con:RestService" id="828083cb-3601-4658-9ff6-94f90ed2152a" wadlVersion="http://wadl.dev.java.net/2009/02" name="someOtherMiscRequest" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings/>
+  <con:definitionCache/>
+  <con:endpoints>
+      <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+  </con:endpoints>
+  <con:resource name="someOtherMiscRequest" path="/resource-path/in/misc/stuff" id="3508e5ca-5a7e-4196-bb35-09fc487d8a14">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="stuff 1" id="a153de97-0627-4571-bc34-ddb7794851b1" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="b6a08670-3974-4726-8810-cd0f10d49e2b" mediaType="application/json" postQueryString="false">
+              <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+&lt;con:entry key="custPreScriptHdrAndMainHdr1" value="custPreScriptAndMainHdr1Va11"/>
+&lt;con:entry key="custPreScriptHdrAndMainHdr2" value="custPreScriptAndMainHdr1Va12"/>
+&lt;con:entry key="custPreScriptHdrAndMainHdr3" value="custPreScriptAndMainHdr1Va13"/>
+&lt;con:entry key="miscHdr1" value="miscHdrVal1"/>
+&lt;con:entry key="miscHdr2" value="miscHdrVal2"/>&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+          <con:request>{
+    "id": 1234,
+    "desc": "This is a postman collection converter test"
+}</con:request>
+          <con:credentials>
+              <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+      </con:request>
+  </con:method>
+</con:resource>
+</con:interface>
+<con:interface xsi:type="con:RestService" id="d33e592d-1943-45b8-90ae-ae0d36b3d9bc" wadlVersion="http://wadl.dev.java.net/2009/02" name="withOnlyHeaders" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings/>
+  <con:definitionCache/>
+  <con:endpoints>
+      <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+  </con:endpoints>
+  <con:resource name="withOnlyHeaders" path="/resource-path/out/stuff" id="30868ded-3b50-4b3b-b79a-6de8553b42e0">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="stuff 1" id="86d9e58e-a202-446f-8c46-6dcf168cd44f" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="09ce593e-9394-4ffa-9730-845eaf8fe9dc" mediaType="application/json" postQueryString="false">
+              <con:settings>
+                  <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+&lt;con:entry key="custHeader1" value="custValue1"/>
+&lt;con:entry key="custHeader2" value="custValue2"/>&lt;/xml-fragment></con:setting>
+          </con:settings>
+          <con:endpoint>https://some-complex-sample-host.com</con:endpoint>
+          <con:request>{
+    "id": 1234,
+    "desc": "This is a postman collection converter test"
+}</con:request>
+          <con:credentials>
+              <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+      </con:request>
+  </con:method>
+</con:resource>
+</con:interface>
+<con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:sensitiveInformation/>
+</con:soapui-project>

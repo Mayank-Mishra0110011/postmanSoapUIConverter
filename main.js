@@ -90,6 +90,19 @@ function itemJSONtoSOAPXML(item) {
         });
       }
     }
+
+    let mediaType = "",
+      reqBody = "";
+    if (item.request.body) {
+      if (item.request.body.options.raw.language == "json") {
+        mediaType = "application/json";
+        reqBody = item.request.body.raw;
+      } else {
+        mediaType = "application/xml";
+        reqBody = `<![CDATA[${item.request.body.raw}]]>`;
+      }
+    }
+
     if (preRequestScriptHeaders.length == 0) {
       preRequestScriptHeaders = headers;
     }
@@ -116,22 +129,14 @@ function itemJSONtoSOAPXML(item) {
       } 1" id="${generateUUID()}" method="${item.request.method}">
           <con:settings/>
           <con:parameters/>
-          <con:request name="Request 1" id="${generateUUID()}" mediaType="${
-      item.request.body.options.raw.language == "json"
-        ? "application/json"
-        : "application/xml"
-    }" postQueryString="false">
+          <con:request name="Request 1" id="${generateUUID()}" mediaType="${mediaType}" postQueryString="false">
               <con:settings>
                   <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">${preRequestScriptHeaders}</con:setting>
           </con:settings>
           <con:endpoint>https://${item.request.url.host.join(
             "."
           )}</con:endpoint>
-          <con:request>${
-            item.request.body.options.raw.language == "json"
-              ? item.request.body.raw
-              : `<![CDATA[${item.request.body.raw}]]>`
-          }</con:request>
+          <con:request>${reqBody}</con:request>
           <con:credentials>
               <con:authType>No Authorization</con:authType>
           </con:credentials>
